@@ -359,30 +359,25 @@ namespace Showdoku
 
 			Row row = this.Rows.SingleOrDefault((r) => r.Contains(cell));
 
-			if (row == null)
-			{
-				throw new CellNotFoundException("The specified cell is not contained in any row.");
-			}
+            return row ?? throw new CellNotFoundException("The specified cell is not contained in any row.");
+        }
 
-			return row;
-		}
-
-		/// <summary>
-		/// Gets the column which contains the specified cell.
-		/// </summary>
-		/// <param name="cell">
-		/// The cell whose encompassing column is to be retrieved.
-		/// </param>
-		/// <returns>
-		/// The column which contains the cell.
-		/// </returns>
-		/// <exception cref="ArgumentNullException">
-		/// Thrown if the specified cell is null.
-		/// </exception>
-		/// <exception cref="CellNotFoundException">
-		/// Thrown if the specified cell is not contained within any column.
-		/// </exception>
-		public Column GetColumnContainingCell(Cell cell)
+        /// <summary>
+        /// Gets the column which contains the specified cell.
+        /// </summary>
+        /// <param name="cell">
+        /// The cell whose encompassing column is to be retrieved.
+        /// </param>
+        /// <returns>
+        /// The column which contains the cell.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown if the specified cell is null.
+        /// </exception>
+        /// <exception cref="CellNotFoundException">
+        /// Thrown if the specified cell is not contained within any column.
+        /// </exception>
+        public Column GetColumnContainingCell(Cell cell)
 		{
 			if (cell == null)
 			{
@@ -391,21 +386,16 @@ namespace Showdoku
 
 			Column column = this.Columns.SingleOrDefault((r) => r.Contains(cell));
 
-			if (column == null)
-			{
-				throw new CellNotFoundException("The specified cell is not contained in any column.");
-			}
+            return column ?? throw new CellNotFoundException("The specified cell is not contained in any column.");
+        }
 
-			return column;
-		}
-
-		/// <summary>
-		/// Returns an enumerator that iterates through each of the cells within this grid.
-		/// </summary>
-		/// <returns>
-		/// An enumerator that can be used to iterate through the cells within this grid.
-		/// </returns>
-		public override IEnumerator<Cell> GetEnumerator()
+        /// <summary>
+        /// Returns an enumerator that iterates through each of the cells within this grid.
+        /// </summary>
+        /// <returns>
+        /// An enumerator that can be used to iterate through the cells within this grid.
+        /// </returns>
+        public override IEnumerator<Cell> GetEnumerator()
 		{
 			for (int x = 0; x < 9; x++)
 			{

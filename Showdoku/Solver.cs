@@ -4,43 +4,38 @@ using System.Collections.Generic;
 
 namespace Showdoku
 {
-	/// <summary>
-	/// Provides a framework for applying techniques for solving a sudoku grid.
-	/// </summary>
-	public class Solver
-	{
-		private readonly ICollection<ISolvingTechnique> techniques;
+    /// <summary>
+    /// Provides a framework for applying techniques for solving a sudoku grid.
+    /// </summary>
+    /// <remarks>
+    /// Creates a new solver for solving sudoku grids using the specified techniques.
+    /// </remarks>
+    /// <param name="techniques">
+    /// A collection of techniques for solving a sudoku grid.
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown if the specified collection of techniques is null.
+    /// </exception>
+    public class Solver(params ISolvingTechnique[] techniques)
+    {
+		private readonly ICollection<ISolvingTechnique> techniques = techniques ?? throw new ArgumentNullException(nameof(techniques), "Argument cannot be null.");
 
-		/// <summary>
-		/// Creates a new solver for solving sudoku grids using the specified techniques.
-		/// </summary>
-		/// <param name="techniques">
-		/// A collection of techniques for solving a sudoku grid.
-		/// </param>
-		/// <exception cref="ArgumentNullException">
-		/// Thrown if the specified collection of techniques is null.
-		/// </exception>
-		public Solver(params ISolvingTechnique[] techniques)
-		{
-			this.techniques = techniques ?? throw new ArgumentNullException(nameof(techniques), "Argument cannot be null.");
-		}
-
-		/// <summary>
-		/// Attempts to solve the specified sudoku grid.
-		/// </summary>
-		/// <param name="grid">
-		/// The sudoku grid to try and solve.
-		/// </param>
-		/// <param name="report">
-		/// An output parameter describing the outcome.
-		/// </param>
-		/// <returns>
-		/// True if the grid was successfully solved, otherwise false.
-		/// </returns>
-		/// <exception cref="ArgumentNullException">
-		/// Thrown if the specified grid is null.
-		/// </exception>
-		public bool TrySolve(Grid grid, out string report)
+        /// <summary>
+        /// Attempts to solve the specified sudoku grid.
+        /// </summary>
+        /// <param name="grid">
+        /// The sudoku grid to try and solve.
+        /// </param>
+        /// <param name="report">
+        /// An output parameter describing the outcome.
+        /// </param>
+        /// <returns>
+        /// True if the grid was successfully solved, otherwise false.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown if the specified grid is null.
+        /// </exception>
+        public bool TrySolve(Grid grid, out string report)
 		{
 			if (grid == null)
 			{

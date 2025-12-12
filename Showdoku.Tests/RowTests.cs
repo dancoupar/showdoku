@@ -30,14 +30,14 @@ namespace Showdoku
 			var grid = new Grid();
 			var cells = new Cell[8]
 			{
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid)
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid)
 			};
 
 			// Act
@@ -58,16 +58,16 @@ namespace Showdoku
 			var grid = new Grid();
 			var cells = new Cell[10]
 			{
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid)
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid)
 			};
 
 			// Act
@@ -88,14 +88,14 @@ namespace Showdoku
 			var grid = new Grid();
 			var cells = new Cell[9]
 			{
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
 				null
 			};
 

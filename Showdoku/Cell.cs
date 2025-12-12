@@ -5,33 +5,27 @@ using System.Text;
 
 namespace Showdoku
 {
-	/// <summary>
-	/// Represents a single cell within a sudoku grid.
-	/// </summary>
-	public class Cell
-	{
-		private readonly Grid grid;
-		private readonly PencilMarkSet pencilMarks;
+    /// <summary>
+    /// Represents a single cell within a sudoku grid.
+    /// </summary>
+    /// <remarks>
+    /// Creates a new cell to be contained in the specified sudoku grid.
+    /// </remarks>
+    /// <param name="grid">
+    /// The grid to which the cell will belong.
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown if the specified grid is null.
+    /// </exception>
+    public class Cell(Grid grid)
+    {
+		private readonly Grid grid = grid ?? throw new ArgumentNullException(nameof(grid), "Argument cannot be null.");
+		private readonly PencilMarkSet pencilMarks = new();
 
-		/// <summary>
-		/// Creates a new cell to be contained in the specified sudoku grid.
-		/// </summary>
-		/// <param name="grid">
-		/// The grid to which the cell will belong.
-		/// </param>
-		/// <exception cref="ArgumentNullException">
-		/// Thrown if the specified grid is null.
-		/// </exception>
-		public Cell(Grid grid)
-		{
-			this.grid = grid ?? throw new ArgumentNullException(nameof(grid), "Argument cannot be null.");
-			this.pencilMarks = new PencilMarkSet();
-		}
-
-		/// <summary>
-		/// Gets the solution to this cell, if solved.
-		/// </summary>
-		public int? Solution
+        /// <summary>
+        /// Gets the solution to this cell, if solved.
+        /// </summary>
+        public int? Solution
 		{
 			get;
 			private set;

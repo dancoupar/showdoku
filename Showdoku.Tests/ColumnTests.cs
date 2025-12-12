@@ -30,14 +30,14 @@ namespace Showdoku
 			var grid = new Grid();
 			var cells = new Cell[8]
 			{
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid)
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid)
 			};
 
 			// Act
@@ -58,16 +58,16 @@ namespace Showdoku
 			var grid = new Grid();
 			var cells = new Cell[10]
 			{
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid)
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid)
 			};
 
 			// Act
@@ -88,14 +88,14 @@ namespace Showdoku
 			var grid = new Grid();
 			var cells = new Cell[9]
 			{
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
-				new Cell(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
+				new(grid),
 				null
 			};
 
@@ -226,7 +226,7 @@ namespace Showdoku
 		public void A_column_containing_only_solved_cells_is_solved()
 		{
 			// Arrange
-			Grid grid = new Grid();
+			var grid = new Grid();
 
 			// Act
 			grid.Cells[0, 0].Solve(1);

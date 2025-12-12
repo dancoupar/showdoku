@@ -85,7 +85,7 @@ namespace Showdoku.SolvingTechniques
 			grid.Cells[4, 4].ErasePencilMark(6);
 			grid.Cells[5, 4].ErasePencilMark(6);
 
-			LockedCandidatesPointingTechnique cut = new LockedCandidatesPointingTechnique();
+			var cut = new LockedCandidatesPointingTechnique();
 
 			// Act
 			cut.Apply(grid);
